@@ -8,6 +8,8 @@ import useForm from "react-hook-form";
 import { MoviesContext } from "../../contexts/moviesContext";
 import { withRouter } from "react-router-dom";
 import MenuItem from "@material-ui/core/MenuItem";
+import Snackbar from "@material-ui/core/Snackbar"; 
+import MuiAlert from "@material-ui/lab/Alert";
 
 const ratings = [
   {
@@ -33,39 +35,52 @@ const ratings = [
 ];
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    marginTop: theme.spacing(2),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  form: {
-    width: "100%",
-    "& > * ": {
+    root: {
       marginTop: theme.spacing(2),
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
     },
-  },
-  textField: {
-    width: "40ch",
-  },
-  submit: {
-    marginRight: theme.spacing(2),
-  },
-}));
+    form: {
+      width: "100%",
+      "& > * ": {
+        marginTop: theme.spacing(2),
+      },
+    },
+    textField: {
+      width: "40ch",
+    },
+    submit: {
+      marginRight: theme.spacing(2),
+    },
+    snack: {
+      width: "50%",
+      "& > * ": {
+        width: "100%",
+      },
+    },
+  }));
 
 const ReviewForm = ({ movie, history }) => {
   const classes = useStyles();
   const { register, handleSubmit, errors, reset } = useForm();
   const context = useContext(MoviesContext);
   const [rating, setRating] = useState(3);
-
+  const [open, setOpen] = React.useState(false);
   const handleRatingChange = (event) => {
     setRating(event.target.value);
+  };
+
+  const handleSnackClose = (event) => {     // NEW
+    setOpen(false);
+    history.push("/movies/favorites");
   };
 
   const onSubmit = (review) => {
     review.movieId = movie.id;
     review.rating = rating;
+    context.addReview(movie, review);
+    setOpen(true);
   };
 
   return (
@@ -73,6 +88,24 @@ const ReviewForm = ({ movie, history }) => {
       <Typography component="h2" variant="h3">
         Write a review
       </Typography>
+      <Snackbar
+        className={classes.snack}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        open={open}
+        onClose={handleSnackClose}
+      >
+      
+            <MuiAlert
+          severity="success"
+          variant="filled"
+          onClose={handleSnackClose}
+        >
+              <Typography variant="h4">
+            Thank you for submitting a review
+          </Typography>
+        </MuiAlert>
+      </Snackbar>
+
       <form
         className={classes.form}
         onSubmit={handleSubmit(onSubmit)}
