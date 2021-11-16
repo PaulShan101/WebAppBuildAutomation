@@ -18,11 +18,11 @@ install_dependencies:
       - node_modules/
 
 bundle_app:
-  stage: build
-  script:
-    - npm run build
-  artifacts:
-   paths:
+stage: build
+script:
+  - npm run build
+artifacts:
+  paths:
     - build/
 
 e2etest:    
@@ -30,4 +30,27 @@ e2etest:
     script:
       - echo "Run tests in headless mode"
       - npm run start:ci
+
+      image: cypress/browsers:node12.0.0-chrome73
+
+stages:
+   - install
+   - build
+   - test
+
+# NEW
+variables:
+   npm_config_cache: "$CI_PROJECT_DIR/.npm"
+   CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
+
+cache:
+   key:
+     files:
+        - package.json
+   paths:
+      - .npm
+      - cache/Cypress
+      - node_modules
+# END NEW
+
 
