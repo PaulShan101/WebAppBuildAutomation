@@ -39,6 +39,7 @@ const App = () => {
       </ul>
       <Switch>
         <Route exact path="/reviews/form" component={AddMovieReviewPage} />
+      <Route exact path="/reviews/form" component={AddMovieReviewPage} />
         <Route exact path="/movies/upcoming" component={Upcoming} />
         <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
         <Route path="/movies/:id" component={MoviePage} />
