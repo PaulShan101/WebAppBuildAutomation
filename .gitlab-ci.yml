@@ -21,3 +21,16 @@ bundle_app:
   stage: build
   script:
     - npm run build
+<<<<<<< HEAD
+=======
+
+
+
+
+e2etest:    
+    stage: test
+    script:
+      - echo "Run tests in headless mode"
+      - npm run start:ci
+
+>>>>>>> tests-in-ci
