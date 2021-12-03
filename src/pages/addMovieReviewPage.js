@@ -27,6 +27,4 @@ const WriteReviewPage = (props) => {
   );
 };
 
-//new
-
 export default withRouter(WriteReviewPage);
