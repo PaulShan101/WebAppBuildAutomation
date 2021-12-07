@@ -64,12 +64,15 @@ export default function PeopleCard({ actor }) {
               {actor.known_for_department}
             </Typography>
           </Grid>
+          
+          
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
               {"  "} {actor.popularity}{" "}
             </Typography>
           </Grid>
+          
         </Grid>
       </CardContent>
       
