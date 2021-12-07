@@ -4,6 +4,8 @@ let movieId = 335983; // The movie Venom
 let movie;
 let reviews;
 
+
+
 describe("Movie Details Page", () => {
   before(() => {
     cy.request(
