@@ -10,7 +10,7 @@
 /build
 
 # miscgit
-cypress.env.json
+
 .DS_Store
 /**/.DS_Store
 .env.local
@@ -18,7 +18,6 @@ cypress.env.json
 .env.test.local
 .env.production.local
 .env
-cypress.env.json.
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
