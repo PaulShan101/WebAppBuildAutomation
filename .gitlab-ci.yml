@@ -35,6 +35,8 @@ bundle_app:
 
 e2etest:    
   stage: test
+  before_script:
+     - npm start &
   script:
      - echo "Run tests in headless mode"
      - npx cypress run
