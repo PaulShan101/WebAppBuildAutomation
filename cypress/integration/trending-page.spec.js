@@ -30,7 +30,7 @@ describe("Trending ", () => {
        let searchString = "e";
        let matchingMovies = filterByTitle(movies, searchString);
        cy.get("#filled-search").clear().type(searchString); // Enter e in text box
-       cy.get(".MuiCardHeader-content").should("have.length", 17);
+       cy.get(".MuiCardHeader-content").should("have.length", matchingMovies.length);
       
        });
      })

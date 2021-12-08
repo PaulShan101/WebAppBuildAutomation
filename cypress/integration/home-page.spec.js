@@ -28,6 +28,19 @@ describe("Home Page ", () => {
 
   describe("Filtering", () => {
     describe("By movie title", () => {
+     it("should only display movies with e in the title", () => {
+       let searchString = "e";
+       let matchingMovies = filterByTitle(movies, searchString);
+       cy.get("#filled-search").clear().type(searchString); // Enter e in text box
+       cy.get(".MuiCardHeader-content").should("have.length", matchingMovies.length);
+      
+       });
+     })
+    })
+
+
+  describe("Filtering", () => {
+    describe("By movie title", () => {
      it("should only display movies with m in the title", () => {
        let searchString = "m";
        let matchingMovies = filterByTitle(movies, searchString);
@@ -81,9 +94,7 @@ describe("Home Page ", () => {
        const matchingMovies = filterByGenre(movies, selectedGenreId);
        cy.get("#genre-select").click();
        cy.get("li").contains(selectedGenreText).click();
-       cy.get(".MuiCardHeader-content").should(
-         "have.length",
-         matchingMovies.length
+       cy.get(".MuiCardHeader-content").should("have.length", 4
        )
        
       });
@@ -92,14 +103,14 @@ describe("Home Page ", () => {
 
    describe("By movie genre By Fantasy", () => {
     it("should display movies with the specified genre only", () => {
-       const selectedGenreId = 35;
+       //const selectedGenreId = 20;
        const selectedGenreText = "Fantasy";
-       const matchingMovies = filterByGenre(movies, selectedGenreId);
+       //const matchingMovies = filterByGenre(movies, selectedGenreId);
        cy.get("#genre-select").click();
        cy.get("li").contains(selectedGenreText).click();
        cy.get(".MuiCardHeader-content").should(
          "have.length",
-         matchingMovies.length
+         5
        )
        
       });
