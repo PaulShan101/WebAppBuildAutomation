@@ -19,7 +19,7 @@ describe("Upcoming", () => {
       })
   })
   beforeEach(() => {
-    cy.visit("/")
+    cy.visit("/movies/upcoming")
   });
 
  
