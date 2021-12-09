@@ -62,7 +62,7 @@ const SiteHeader = ( { history }) => {
                   aria-controls="menu-appbar"
                   aria-haspopup="true"
                   onClick={handleMenu}
-                  color="inherit"
+                  color="blue"
                 >
                   <MenuIcon />
                 </IconButton>
@@ -96,7 +96,7 @@ const SiteHeader = ( { history }) => {
                 {menuOptions.map((opt) => (
                   <Button
                     key={opt.label}
-                    color="inherit"
+                    color="blue"
                     onClick={() => handleMenuSelect(opt.path)}
                   >
                     {opt.label}
