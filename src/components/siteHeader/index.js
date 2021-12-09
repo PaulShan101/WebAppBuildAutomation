@@ -46,13 +46,13 @@ const SiteHeader = ( { history }) => {
 
   return (
     <>
-      <AppBar position="fixed" color="secondary">
+      <AppBar position="fixed" color="black">
         <Toolbar>
           <Typography variant="h4" className={classes.title}>
             TMDB Client
           </Typography>
           <Typography variant="h6" className={classes.title}>
-            All you ever wanted to know about Movies!
+            Movies On Demand
           </Typography>
             {isMobile ? (
               <>
@@ -61,7 +61,7 @@ const SiteHeader = ( { history }) => {
                   aria-controls="menu-appbar"
                   aria-haspopup="true"
                   onClick={handleMenu}
-                  color="blue"
+                  color="white"
                 >
                   <MenuIcon />
                 </IconButton>

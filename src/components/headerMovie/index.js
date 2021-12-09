@@ -11,9 +11,10 @@ import { withRouter } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    color: "black",
     justifyContent: "space-around",
     flexWrap: "wrap",
-    padding: theme.spacing(1.5),
+    padding: theme.spacing(4.5),
     margin: 0,
   },
   tagLine: {
