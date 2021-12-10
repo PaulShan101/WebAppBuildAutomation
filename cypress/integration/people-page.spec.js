@@ -23,11 +23,11 @@ beforeEach(() => {
            })
           })
 
-          // describe("check Music", function()  {
-          //   it("checks for Music", function() {
-          //     cy.contains("Music")
-          //    })
-          //   })
+          describe("check Homepage", function()  {
+            it("Navigate to Homepage", function() {
+              cy.contains("Home").click()
+             })
+            })
    
 
 // describe("PeoplePage", () => {

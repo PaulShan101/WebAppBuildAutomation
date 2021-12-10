@@ -25,6 +25,13 @@ describe("Home Page ", () => {
   describe("Base tests", () => {
     
   });
+  describe("check the movie Red Notice", function()  {
+    it("Checks Red Notice", function() {
+      cy.get("#filled-search").type("Red Notice")
+     })
+    })
+  
+
 
   describe("Filtering", () => {
     describe("By movie title", () => {
@@ -86,6 +93,14 @@ describe("Home Page ", () => {
     cy.get("#filled-search").clear().type(searchString); // Enter m in text box
     cy.get(".MuiCardHeader-content").should("have.length", 0);
   });
+
+  // describe("check for Red Notice", function()  {
+  //   it("Navigate to review page", function() {
+  //     cy.contains("/movies/512195").click()
+  //    })
+  //   })
+
+
 
   //  describe("By movie genre By Thriller", () => {
   //   it("should display movies with the specified genre only", () => {
