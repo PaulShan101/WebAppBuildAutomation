@@ -63,7 +63,7 @@ describe("Trending ", () => {
        cy.get("#genre-select").click();
        cy.get("li").contains(selectedGenreText).click();
        cy.get(".MuiCardHeader-content").should(
-         "have.length", 3
+         "have.length", 2
          //matchingMovies.length
        );
        
