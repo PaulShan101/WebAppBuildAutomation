@@ -2,19 +2,19 @@
 
 
 Assignment 1 - ReactJS app.
-Name: [your name]
+Name: Paul Shanahan
 
 Overview.
-[A brief statement on the content of this repository.]
+this content is my updates to my movie app. I added three pages and worked on the navigation of the app.
+my repository is of commits of my approach to it. i worked on the develop branch and will merge that the main 
+branch when it is complete
 
 Features.
-[ A bullet-point list of the new features you added to the Movies Fan app (and any modifications to existing features) .]
 
-Feature 1
-Feature 2
-Feature 3
-etc
-etc
+
+New Page Trending: added a page for the movies that are trending at the moment
+New Page People: added a page for the actors and actresses and their star liking and their role.
+New Pages Upcomimg and Popular: these 2 pages consist of movies that are coming new and movies that are the most popular at the moment 
 Setup requirements.
 [ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
 
@@ -22,12 +22,13 @@ API endpoints.
 [ List the additional TMDB endpoints used, giving the description and pathname for each one.]
 
 e.g.
-
-Discover list of movies - discover/movie
+Upcoming list of movies - movies/upcoming
+People list  - movies/people
 Movie details - movie/:id
 Movie genres = /genre/movie/list
+Movie reviews = /reviews/form
 App Design.
-Component catalogue.
+
 [ Insert a screenshot from the Storybook UI that lists all the stories for the app's components, and highlight those relating to your new/modified components - see the example screenshot below.] .......
 
 
@@ -50,9 +51,9 @@ Routing.
 /blogs/:id - displays a particular blog.
 /blogs/:id/comments - detail view of a particular blog and its comments.
 etc.
-[If relevant, state what aspects of your app are protected (i.e. require authentication) and what is public.]
 
-Independent learning (If relevant).
+
+
 [ Itemize the technologies/techniques you researched independently and adopted in your project, i.e. aspects not covered in the lectures/labs. Include the source code filenames that illustrate these (we do not require code excerpts) and provide references to the online resources that helped you (articles/blogs).
 
 Assignment 1 - Agile Software Practice.
@@ -61,21 +62,47 @@ Best test cases.
 [ List the top 4/5 test cases ('it' blocks), in your opinion, from your test suite that best demonstrate your competency in writing Cypress test code. Specify the test file name and the starting line number of the 'it' block,
 
 e.g.
+  it("should display the movie's details", () => {
+            cy.get("h3").contains("Overview");
+            cy.get("h3").next().contains(movie.overview);
+            cy.get("ul")
+              .eq(1)
+  the test show show the movie details 
+  
+             
+              beforeEach(() => {
+    cy.visit(`/movies/${movie.id}`);
+  });
+  describe("Base tests", () => {
+    it("should display movie title in the page header", () => {
+      cy.get("h3").contains(movie.title);
+      
+ The test should show the movie title     
+ 
+  describe("By movie genre By Horror", () => {
+    it("should display movies with the specified genre only", () => {
+       const selectedGenreId = 35;
+       const selectedGenreText = "Horror";
+       const matchingMovies = filterByGenre(movies, selectedGenreId);
+       cy.get("#genre-select").click();
+       cy.get("li").contains(selectedGenreText).click();
+       cy.get(".MuiCardHeader-content").should(
+         "have.length", 2
+         //matchingMovies.length
+       );
 
-cypress/integration/mustWatch-movies-page.spec.js - line 24
-cypress/integration/actor-bio-page.spec.js - line 32
-etc
-Cypress Custom commands (if relevant).
+.
 [Specify the test file(s) that contain custom Cypress command implementations.]
 
 e.g.
 
-cypress/integration/mustWatch-novies-page.spec.js
-cypress/integration/actor-bio-page.spec.js
+cypress/integration/popular-page.spec.js
+cypress/integration/people-page.spec.js
+cypress/integration/trending-page.spec.js
+cypress/integration/home-page.spec.js
+cypress/integration/popular-page.spec.js
+cypress/integration/navigation.spec.js
 Code Splitting.
 [Show a screenshot of the 'build/static/js' folder of your project]
 
 
-
-Independent learning (If relevant).
-[State which aspect of the Outstanding grading spectrum you addresses. Include relevant screenshots and links to services used, e.g. Percy project, Deployed app
