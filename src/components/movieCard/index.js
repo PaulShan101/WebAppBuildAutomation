@@ -21,7 +21,7 @@ import  { MoviesContext } from "../../contexts/moviesContext"
 //new main
 
 const useStyles = makeStyles({
-  backgroundColor: "blue",
+  backgroundColor: "rgb(255, 255, 255)",
   card: { maxWidth: 345 },
   media: { height: 500 },
   avatar: {
