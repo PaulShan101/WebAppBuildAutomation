@@ -25,8 +25,8 @@ function PeoplePageTemplate({ actors, title }) {
       <Grid item xs={12}>
         <Header title={title} />
       </Grid>
-      <Grid item container spacing={5}>
-        <Grid key="find" item xs={12} sm={6} md={4} lg={3} xl={2}>
+      <Grid item container spacing={10}>
+        <Grid key="find" item xs={20} sm={6} md={4} lg={3} xl={2}>
          
         </Grid>
         <PeopleList actors={displayedPeople}></PeopleList>

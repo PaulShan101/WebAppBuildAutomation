@@ -21,10 +21,11 @@ import  { MoviesContext } from "../../contexts/moviesContext"
 //new main
 
 const useStyles = makeStyles({
+  backgroundColor: "blue",
   card: { maxWidth: 345 },
   media: { height: 500 },
   avatar: {
-    backgroundColor: "blue",
+    
   },
 });
 
@@ -68,16 +69,28 @@ export default function MovieCard({ movie, action }) {
       />
       <CardContent>
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item xs={15}>
             <Typography variant="h6" component="p">
               <CalendarIcon fontSize="small" />
-              {movie.release_date}
+              {" Release Date  -"} {movie.release_date}
             </Typography>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={15}>
             <Typography variant="h6" component="p">
-              <StarRateIcon fontSize="small" />
-              {"  "} {movie.vote_average}{" "}
+              <StarRateIcon fontSize="medium" />
+              {" Vote Average   -"} {movie.vote_average}{" "}
+            </Typography>
+          </Grid>
+          <Grid item xs={15}>
+            <Typography variant="h6" component="p">
+              <StarRateIcon fontSize="medium" />
+              {" Total Votes   -"} {movie.vote_count}{" "}
+            </Typography>
+          </Grid>
+          <Grid item xs={15}>
+            <Typography variant="h6" component="p">
+              <StarRateIcon fontSize="medium" />
+              {" Popularity   -"} {movie.popularity}{" "}
             </Typography>
           </Grid>
         </Grid>
@@ -86,7 +99,7 @@ export default function MovieCard({ movie, action }) {
        {action(movie)}
        <Link to={`/movies/${movie.id}`}>
           <Button variant="outlined" size="medium" color="primary">
-            More Info ...
+            About ...
           </Button>
         </Link>
         

@@ -12,10 +12,12 @@ import Menu from "@material-ui/core/Menu";
 import { withRouter } from "react-router-dom";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { blue } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
+    backgroundColor: blue
   },
   offset: theme.mixins.toolbar,
 }));
@@ -46,7 +48,7 @@ const SiteHeader = ( { history }) => {
 
   return (
     <>
-      <AppBar position="fixed" color="black">
+      <AppBar position="fixed" color="blue">
         <Toolbar>
           <Typography variant="h4" className={classes.title}>
             TMDB Client
@@ -61,7 +63,7 @@ const SiteHeader = ( { history }) => {
                   aria-controls="menu-appbar"
                   aria-haspopup="true"
                   onClick={handleMenu}
-                  color="white"
+                  color="blue"
                 >
                   <MenuIcon />
                 </IconButton>

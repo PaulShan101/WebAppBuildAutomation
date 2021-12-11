@@ -8,7 +8,7 @@ import CardHeader from "@material-ui/core/CardHeader";
 
 import Typography from "@material-ui/core/Typography";
 
-import CalendarIcon from "@material-ui/icons/CalendarTodayTwoTone";
+
 import StarRateIcon from "@material-ui/icons/StarRate";
 
 import Grid from "@material-ui/core/Grid";
@@ -58,18 +58,25 @@ export default function PeopleCard({ actor }) {
       />
       <CardContent>
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item xs={15}>
             <Typography variant="h6" component="p">
-              <CalendarIcon fontSize="small" />
-              {actor.known_for_department}
+            <StarRateIcon fontSize="small" />
+              {" What Field    - "} {actor.known_for_department}
             </Typography>
           </Grid>
           
           
-          <Grid item xs={6}>
+          <Grid item xs={15}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
-              {"  "} {actor.popularity}{" "}
+              {" ID  - "} {actor.id}{" "}
+            </Typography>
+          </Grid>
+
+          <Grid item xs={15}>
+            <Typography variant="h6" component="p">
+              <StarRateIcon fontSize="small" />
+              {" Popularity  "} {actor.popularity}{" "}
             </Typography>
           </Grid>
           
