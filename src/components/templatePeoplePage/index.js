@@ -4,10 +4,12 @@ import Header from "../headerMovieList";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import PeopleList from "../peopleList";
+import { blue } from "@material-ui/core/colors";
 
 const useStyles = makeStyles({
   root: {
     padding: "20px",
+    backgroundColor: blue
   },
 });
 

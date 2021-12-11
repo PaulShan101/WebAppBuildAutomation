@@ -24,7 +24,7 @@ const useStyles = makeStyles({
   card: { maxWidth: 345 },
   media: { height: 500 },
   avatar: {
-    backgroundColor: "red",
+    backgroundColor: "blue",
   },
 });
 

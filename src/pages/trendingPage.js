@@ -3,6 +3,8 @@ import PageTemplate from '../components/templateMovieListPage'
 import { getTrendingMovies } from "../api/tmdb-api";
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
 
+import WriteReview from "../components/cardIcons/writeReview";
+
 
 const Trending = (props) => {
   const [movies, setMovies] = useState([]);
@@ -33,8 +35,10 @@ const Trending = (props) => {
         return (
           <>
           <AddToFavoritesIcon movie={movie}/>
+           
+          <WriteReview movie={movie} />
+        </>
           
-          </>
         );
       }}
       
