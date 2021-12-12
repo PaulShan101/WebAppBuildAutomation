@@ -30,7 +30,7 @@ describe("Navigation", () => {
   });  
   describe("From the home page", () => {
     it("should navigate to the movie details page and change browser URL", () => {
-      cy.get(".MuiCardActions-root").eq(0).contains("More Info").click();
+      cy.get(".MuiCardActions-root").eq(0).contains("About").click();
       cy.url().should("include", `/movies/${movies[0].id}`);
       cy.get("h3").contains(movies[0].title);
     });
@@ -42,7 +42,7 @@ describe("Navigation", () => {
               cy.get("header").find(".MuiToolbar-root").find("button").eq(1).click();
             });
             it("should navigate to the movies detail page and change the browser URL", () => {
-              cy.get(".MuiCardActions-root").eq(0).contains("More Info").click();
+              cy.get(".MuiCardActions-root").eq(0).contains("About").click();
               cy.url().should("include", `/movies/${movies[0].id}`);
               cy.get("h3").contains(movies[0].title);
             });
