@@ -61,40 +61,6 @@ Automated Testing.
 Best test cases.
 [ List the top 4/5 test cases ('it' blocks), in your opinion, from your test suite that best demonstrate your competency in writing Cypress test code. Specify the test file name and the starting line number of the 'it' block,
 
-e.g.
-  it("should display the movie's details", () => {
-            cy.get("h3").contains("Overview");
-            cy.get("h3").next().contains(movie.overview);
-            cy.get("ul")
-              .eq(1)
-  the test show show the movie details 
-  
-             
-              beforeEach(() => {
-    cy.visit(`/movies/${movie.id}`);
-  });
-  describe("Base tests", () => {
-    it("should display movie title in the page header", () => {
-      cy.get("h3").contains(movie.title);
-      
- The test should show the movie title     
- 
-  describe("By movie genre By Horror", () => {
-    it("should display movies with the specified genre only", () => {
-       const selectedGenreId = 35;
-       const selectedGenreText = "Horror";
-       const matchingMovies = filterByGenre(movies, selectedGenreId);
-       cy.get("#genre-select").click();
-       cy.get("li").contains(selectedGenreText).click();
-       cy.get(".MuiCardHeader-content").should(
-         "have.length", 2
-         //matchingMovies.length
-       );
-
-.
-[Specify the test file(s) that contain custom Cypress command implementations.]
-
-e.g.
 
 cypress/integration/popular-page.spec.js
 cypress/integration/people-page.spec.js
