@@ -16,7 +16,9 @@ import Trending from "./pages/trendingPage";
 import People from "./pages/peoplePage";
 import Popular from "./pages/PopularPage";
 import LoginPage from "./pages/loginPage";
+import SignUpPage from "./pages/signUpPage";
 import PrivateRoute from "./pages/privateRoute";
+import AuthHeader from "./pages/authHeader";
 
 
 const queryClient = new QueryClient({
@@ -35,8 +37,9 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
     <BrowserRouter>
     <AuthProvider>
+     
      <SiteHeader />   <MoviesContextProvider>   
-          
+     <AuthHeader />   
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -44,9 +47,13 @@ const App = () => {
         <li>
           <Link to="/login">Login</Link>
         </li>
+        <li>
+          <Link to="/signUp">Sign Up</Link>
+        </li>
       </ul>
       <Switch>
         <Route path="/login" component={LoginPage} />
+        <Route path="/signUp" component={SignUpPage} />
         <Route exact path="/movies/popular" component={Popular} />  
         <Route exact path="/movies/people" component={People} />  
         <Route exact path="/movies/trending" component={Trending} />
