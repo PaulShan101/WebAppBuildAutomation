@@ -1,5 +1,5 @@
 export const movies = {
-    "page": 5,
+    "page": 1,
     "results": [
         {
             "adult": false,

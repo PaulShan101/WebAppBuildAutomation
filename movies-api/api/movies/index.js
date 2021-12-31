@@ -18,7 +18,7 @@ router.get('/tmdb/upcoming', asyncHandler( async(req, res) => {
 
 // Get movie details
 router.get('/', asyncHandler(async (req, res) => {
-    let { page = 1, limit = 10 } = req.query; // destructure page and limit and set default values
+    let { page = 1, limit = 7 } = req.query; // destructure page and limit and set default values
     [page, limit] = [+page, +limit]; //trick to convert to numeric (req.query will contain string values)
 
     const totalDocumentsPromise = movieModel.estimatedDocumentCount(); //Kick off async calls
