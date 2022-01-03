@@ -22,7 +22,7 @@ export const signup = (username, password) => {
 
 export const getMovies = () => {
     return fetch(
-       '/api/movies?page=2&limit=2',{headers: {
+       '/api/movies',{headers: {
          'Authorization': window.localStorage.getItem('token')
       }
     }
@@ -31,7 +31,7 @@ export const getMovies = () => {
 
   export const getUpcomingMovies = () => {
     return fetch(
-       '/api/movie',{headers: {
+       '/api/movie/upcoming',{headers: {
          'Authorization': window.localStorage.getItem('token')
       }
     }

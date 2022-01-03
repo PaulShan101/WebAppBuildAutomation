@@ -2,6 +2,9 @@ import React, { useContext, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { AuthContext } from '../contexts/authContext';
 import { Link } from "react-router-dom";
+import "./loginPage.css";
+
+
 
 const LoginPage = props => {
   const context = useContext(AuthContext)
@@ -20,8 +23,9 @@ const LoginPage = props => {
     return <Redirect to={from} />;
   }
   return (
+    <div id="para1">
     <>
-      <h2>Login page</h2>
+      <h1>Login page</h1>
       <p>You must log in to view the protected pages </p>
       <input id="username" placeholder="user name" onChange={e => {
         setUserName(e.target.value);
@@ -34,7 +38,10 @@ const LoginPage = props => {
       <p>Not Registered?
       <Link to="/signup">Sign Up!</Link></p>
     </>
+    </div>
   );
+  
 };
+
 
 export default LoginPage;

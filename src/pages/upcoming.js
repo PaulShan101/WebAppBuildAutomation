@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PageTemplate from '../components/templateMovieListPage'
-import { getUpcomingMovies } from "../api/tmdb-api";
+import { getUpcomingMovies } from "../api/movie-api";
 import AddToFavorites from "../components/cardIcons/addToFavorites"
 
 const Upcoming = (props) => {
