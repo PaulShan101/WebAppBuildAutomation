@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { AuthContext } from '../contexts/authContext';
+import "./signUpPage.css";
 
 const SignUpPage = props => {
   const context = useContext(AuthContext)
@@ -23,8 +24,9 @@ const SignUpPage = props => {
   }
 
   return (
+    <div id="para2">
     <>
-      <h2>SignUp page</h2>
+      <h2>Sign Up page</h2>
       <p>You must register a username and password to log in </p>
       <input value={userName} placeholder="user name" onChange={e => {
         setUserName(e.target.value);
@@ -38,6 +40,7 @@ const SignUpPage = props => {
       {/* Login web form  */}
       <button onClick={register}>Register</button>
     </>
+    </div>
   );
 };
 
