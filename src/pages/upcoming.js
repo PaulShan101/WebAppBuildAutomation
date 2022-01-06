@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PageTemplate from '../components/templateMovieListPage'
-import { getUpcomingMovies } from "../api/movie-api";
+import { getUpcomingMovies } from "../api/tmdb-api";
 import AddToFavorites from "../components/cardIcons/addToFavorites"
 
 const Upcoming = (props) => {
@@ -12,7 +12,7 @@ const Upcoming = (props) => {
 
   useEffect(() => {
     getUpcomingMovies().then(movies => {
-      setMovies(movies);
+      setMovies(movies.results);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
